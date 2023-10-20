@@ -8,13 +8,41 @@
 html , body{
     height: 100%;
     width: 100%;
+    cursor: none;
 }
 
 #main{
     background-color: #0f0d0d;
 }
 
-#page1, #page2{
+.cursor{
+    width: 20px;
+    height: 20px;
+    background-color: #edbfff;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition-property: width, height; 
+    transition-duration: 0.3s; 
+    transition-timing-function: ease-out; 
+}
+
+.h4{
+    text-align: center;
+    font-size: 0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition-property: all; 
+    transition-duration: 0.5s; 
+    transition-timing-function: linear; 
+    font-weight: 100;
+}
+
+#page1{
     min-height: 100vh;
     width: 100%;
     padding: 0 20px;
@@ -78,24 +106,25 @@ html , body{
 }
 
 #page2{
-    min-height: 128vh;
+    min-height: 100vh;
+    width: 100%;
+    padding: 100px 5vw;
+    border-bottom: 2px solid #0f0d0d;
 }
 
 #page2>h1{
     font-size: 7vw;
     font-weight: 500;
-    margin: 70px 0;
     color: #000;
 }
 
 .page2-container{
-    height: 80vh;
+    height: 60vh;
     width: 100%;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 0 30px;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .page2-left{
@@ -125,4 +154,180 @@ html , body{
     color: #0f0d0d;
     border: none;
     border-radius: 20px;
+}
+
+#page3{
+    min-height: 150vh;
+    width: 100%;
+    padding: 100px 5vw;
+    padding-bottom: 150px;
+}
+
+#page3>h1{
+    color: #000;
+    font-size: 8vw;
+    margin-bottom: 90px;
+    font-weight: 400;
+}
+
+.page3-container{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.page3-left{
+    height: 100%;
+    width: 40%;
+    margin-top: 100px;
+}
+
+.page3-right{
+    height: 100%;
+    width: 40%;
+}
+
+.one{
+    background-image: url(./one.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.two{
+    background-image: url(./two.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.three{
+    background-image: url(./three.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.one{
+    background-image: url(./one.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.four{
+    background-image: url(./four.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.five{
+    background-image: url(./five.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.six{
+    background-image: url(./six.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    padding: 200px 5vw;
+}
+
+#elem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.text-div>h1{
+    position: relative;
+    font-size: 7.5vw;
+    font-weight: 400;
+    z-index: 10;
+    transition: all ease-out 0.5s;
+}
+
+.text-div{
+    height: 8vw;
+    overflow: hidden;
+}
+
+#elem:hover h1{
+    transform: translateY(-100%);
+    color: #edbfff;
+}
+
+#elem>img{
+    width: 300px;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(20%) rotate(5deg);
+    transition: all ease 0.5s;
+}
+
+
+
+#elem img:nth-child(1){
+    height: 370px;
+    left: 7%;
+}
+
+#elem img:nth-child(3){
+    right: 10%;
+    z-index: 9;
+    top: 20%;
+}
+
+#elem:hover img{
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+}
+
+#page5{
+    min-height: 180vh;
+    width: 100%;
+    padding: 150px 40px;
+}
+
+#page5>h1{
+    font-weight: 300;
+    padding-bottom: 30px;
+    color: #fff;
+    font-size: 6vw;
+    width: 100%;
+    border-bottom: 3px solid #fff;
+    text-transform: uppercase;
+}
+
+.box{
+    padding: 50px 0;
+    width: 100%;
+    border-bottom: 3px solid #fff;
+    position: relative;
+    height: 10vw;
+    z-index: 9;
+}
+
+.box>h4{
+    font-weight: 300;
+    color: #fff;
+    font-size: 2vw;   
+}
+
+span{
+    color: #edbfff;
+}
+
+.box img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25vw;
+  height: 25vw;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 10;
+  transition: opacity ease-out 0.5s;
 }

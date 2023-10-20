@@ -46,13 +46,110 @@ function scrollLocoTrig() {
 
 scrollLocoTrig()
 
+const crsr = document.querySelector(".cursor")
+const main = document.querySelector("#main")
+const video = document.querySelector("video")
+
+main.addEventListener("mousemove", (dets)=>{
+  crsr.style.display = "block"
+  crsr.style.left = dets.x + 5 + "px"
+  crsr.style.top = dets.y + 5 + "px"
+})
+
+document.addEventListener("mouseleave", (dets) => {
+  crsr.style.display = "none"
+});
+
+video.addEventListener("mouseenter",()=>{
+  crsr.style.width = 150 + "px"
+  crsr.style.height = 150 + "px"
+  crsr.style.backgroundColor = "#000"
+  crsr.style.mixBlendMode = "normal"
+  document.querySelector(".h4").style.opacity = 1;
+  document.querySelector(".h4").style.fontSize = 50 + "px";
+})
+
+video.addEventListener("mouseleave", () => {
+  crsr.style.width = 20 + "px";
+  crsr.style.height = 20 + "px";
+  crsr.style.backgroundColor = "#edbfff";
+  crsr.style.mixBlendMode = "difference";
+  document.querySelector(".h4").style.opacity = 0;
+  document.querySelector(".h4").style.fontSize = 0;
+  document.querySelector(".h4").style.fontSize = 0 + "px";
+});
+
+const works = document.querySelectorAll(".page3-left")
+
+works.forEach((elem)=>{
+  elem.addEventListener("mouseenter", () => {
+    crsr.style.width = 150 + "px";
+    crsr.style.height = 150 + "px";
+    crsr.style.backgroundColor = "#000";
+    crsr.style.mixBlendMode = "normal";
+    document.querySelector(".h4").style.opacity = 1;
+    document.querySelector(".h4").style.fontSize = 50 + "px";
+  });
+
+  elem.addEventListener("mouseleave", () => {
+    crsr.style.width = 20 + "px";
+    crsr.style.height = 20 + "px";
+    crsr.style.backgroundColor = "#edbfff";
+    crsr.style.mixBlendMode = "difference";
+    document.querySelector(".h4").style.opacity = 0;
+    document.querySelector(".h4").style.fontSize = 0 + "px";
+  });
+})
+
+const works2 = document.querySelectorAll(".page3-right");
+
+works2.forEach((elem) => {
+  elem.addEventListener("mouseenter", () => {
+    crsr.style.width = 150 + "px";
+    crsr.style.height = 150 + "px";
+    crsr.style.backgroundColor = "#000";
+    crsr.style.mixBlendMode = "normal";
+    document.querySelector(".h4").style.opacity = 1;
+    document.querySelector(".h4").style.fontSize = 50 + "px";
+  });
+
+  elem.addEventListener("mouseleave", () => {
+    crsr.style.width = 20 + "px";
+    crsr.style.height = 20 + "px";
+    crsr.style.backgroundColor = "#edbfff";
+    crsr.style.mixBlendMode = "difference";
+    document.querySelector(".h4").style.opacity = 0;
+    document.querySelector(".h4").style.fontSize = 0 + "px";
+  });
+});
+
+gsap.from("#page1 h1,#page1 h2", {
+  y: 10,
+  rotate: 10,
+  opacity: 0,
+  delay: 0.3,
+  duration: 0.7,
+});
+
+gsap.from("#page2 h1, .page2-left, .page2-right", {
+  opacity: 0,
+  y: 100,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page3",
+    scroller: "#main",
+    start: "top bottom",
+    end: "bottom top"
+  }
+})
 
 var tl = gsap.timeline({
     scrollTrigger: {
+        //markers: true,
         trigger:"#page1 h1",
         scroller:"#main",
-        start: "top 27%",
-        end: "top 0",
+        start: "top 10%",
+        end: "top -10%",
         scrub: 3,
     }
 })
@@ -83,3 +180,32 @@ var tl2 = gsap.timeline({
 tl2.to("#main",{
     backgroundColor: "#fff"
 })
+
+var tl3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#page1 h1",
+    scroller: "#main",
+    start: "top -550%",
+    end: "top -570%",
+    scrub: 3,
+  },
+});
+
+tl3.to("#main", {
+  backgroundColor: "#0f0d0d",
+});
+
+var elem = document.querySelectorAll(".box");
+
+elem.forEach(function (val) {
+  console.log(val.childNodes[3]);
+  val.addEventListener("mouseenter", () => {
+    val.childNodes[3].style.opacity = 1;
+  });
+  val.addEventListener("mouseleave", () => {
+    val.childNodes[3].style.opacity = 0;
+  });
+  val.addEventListener("mousemove", (axis) => {
+    val.childNodes[3].style.left = axis.x + "px";
+  });
+});
