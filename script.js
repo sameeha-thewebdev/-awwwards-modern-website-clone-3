@@ -47,10 +47,9 @@ function scrollLocoTrig() {
 scrollLocoTrig()
 
 const crsr = document.querySelector(".cursor")
-const main = document.querySelector("#main")
 const video = document.querySelector("video")
 
-main.addEventListener("mousemove", (dets)=>{
+document.addEventListener("mousemove", (dets)=>{
   crsr.style.display = "block"
   crsr.style.left = dets.x + 5 + "px"
   crsr.style.top = dets.y + 5 + "px"

@@ -16,6 +16,7 @@ html , body{
 }
 
 .cursor{
+    display: none;
     width: 20px;
     height: 20px;
     background-color: #edbfff;
@@ -46,14 +47,19 @@ html , body{
     min-height: 100vh;
     width: 100%;
     padding: 0 20px;
+    padding-top: 10vw;
 }
 
 #nav{
+    padding: 0 40px;
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    mix-blend-mode: difference;
+    z-index: 99;
 }
 
 #nav>img{
@@ -87,7 +93,6 @@ html , body{
 #page1>h1{
     font-size: 8vw;
     font-weight: 400;
-    margin-top: 10vw;
     margin-left: 2vw;
 }
 
@@ -286,7 +291,7 @@ html , body{
 }
 
 #page5{
-    min-height: 180vh;
+    min-height: 165vh;
     width: 100%;
     padding: 150px 40px;
 }
@@ -331,3 +336,77 @@ span{
   z-index: 10;
   transition: opacity ease-out 0.5s;
 }
+
+footer{
+    min-height: 130vh;
+    width: 100vw;
+    background-color: #EEBEFF;
+    padding: 0 7vw;
+}
+
+.footer-upper{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-upper>h1{
+    color: #000;
+    font-weight: 400;
+    font-size: 7vw;
+}
+
+.footer-upper>.circle{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-upper>.circle>h4{
+    color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.footer-lower{
+    width: 100%;
+    height: 30vh;
+}
+
+.footer-lower>h3{
+    font-size: 1.4vw;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 4vmax;
+}
+
+.footer-lower>h4{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 400;
+}
+
+.footer-lower>h4>a{
+    color: #000;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all ease 0.4s;
+}
+
+.footer-lower>h4>a:hover{
+    border-bottom: 1px solid #000;
+}
+
+.footer-lower>h4>a>i{
+    margin-right: 5px;
+    font-size: 16px;
+    color: #000;
+}
+
